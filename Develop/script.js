@@ -25,60 +25,55 @@ function generatePassword() {
   
   
   // Asks user what is the length of the new password
-  var passwordLength = parseInt (prompt("What is your new password's length?. Passwords must be between 8 and 128 characters."));
-
+  var passwordLength = parseInt(prompt("What is your new password's length? Passwords must be between 8 and 128 characters."));
+  console.log(passwordLength);
   // check Rock Paper Scissor Example for working these types of problems
-  if(passwordLength >= 8 && ) {
+  if(passwordLength >= 8 && passwordLength <= 128) {
+    
     // Uppercase?
     var useUpper = confirm("Do you want uppercase characters?");
 
     var useLower = confirm("Do you want lowercase characters?");
 
-    var useSpecial = confirm("Do you want special characters?")
+    var useSpecial = confirm("Do you want special characters?");
 
     var useNumber = confirm("Do you want numbers?");
 
     if(useUpper === true) {
-      allChoices.concat(allUpper);
+      allChoices = allChoices.concat(allUpper);
 
     }
 
     if(useLower === true) {
-      allChoices.concat(allLower);
+      allChoices = allChoices.concat(allLower);
 
     }
 
     if(useSpecial === true) {
-      allChoices.concat(allSpecial);
+      allChoices = allChoices.concat(allSpecial);
 
     }
 
     if(useNumber === true) {
-      allChoices.concat(allNumbers);
+      allChoices = allChoices.concat(allNumbers);
 
     }
-
-    // Lowercase?
-    var useLower = confirm("Do you want lowercase characters?")
-  } 
-
-  // Randomly generate password here
-  for(var i = 1; i >= passwordLength; i++) {
-    var randomIndex = Math.floor(Math.random() * allChoices.length);
-
-    new Password += ""
-  }
-
-  newPassword = 
-
-
-
-  return newPassword;
-
-  } else {
+  
+} else {
     alert("Error! Length must be between 8 and 128 characters!");
-    return: 
+    return;
+} 
+console.log(allChoices);
+  // Randomly generate password here
+  for(var i = 0; i < passwordLength; i++) {
+    var randomIndex = Math.floor(Math.random() * allChoices.length);
+  console.log(randomIndex);
+    newPassword += allChoices[randomIndex];
   }
+
+
+  console.log(newPassword);
+  return newPassword;
 
 }
 
