@@ -1,81 +1,42 @@
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 }
 
-var allUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
-var allLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-var allNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-var allSpecial = ["(", "{", "}", "[", "]", "(", ")", "/", "\\", "~", ",", ";", ":", ".", "<", ">", ")", "@", "#", "$", "%"];
-
-function generatePassword() {
-  var allChoices = [];
-  var newPassword = "";
-  
-  
-  // Asks user what is the length of the new password
-  var passwordLength = parseInt(prompt("What is your new password's length? Passwords must be between 8 and 128 characters."));
-  console.log(passwordLength);
-  // check Rock Paper Scissor Example for working these types of problems
-  if(passwordLength >= 8 && passwordLength <= 128) {
-    
-    // Uppercase?
-    var useUpper = confirm("Do you want uppercase characters?");
-
-    var useLower = confirm("Do you want lowercase characters?");
-
-    var useSpecial = confirm("Do you want special characters?");
-
-    var useNumber = confirm("Do you want numbers?");
-
-    if(useUpper === true) {
-      allChoices = allChoices.concat(allUpper);
-
-    }
-
-    if(useLower === true) {
-      allChoices = allChoices.concat(allLower);
-
-    }
-
-    if(useSpecial === true) {
-      allChoices = allChoices.concat(allSpecial);
-
-    }
-
-    if(useNumber === true) {
-      allChoices = allChoices.concat(allNumbers);
-
-    }
-  
-} else {
-    alert("Error! Length must be between 8 and 128 characters!");
-    return;
-} 
-console.log(allChoices);
-  // Randomly generate password here
-  for(var i = 0; i < passwordLength; i++) {
-    var randomIndex = Math.floor(Math.random() * allChoices.length);
-  console.log(randomIndex);
-    newPassword += allChoices[randomIndex];
-  }
-
-
-  console.log(newPassword);
-  return newPassword;
-
-}
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// var allUppercase = ["A", "B", "C", ...]
+// var allLowercase = ["a", "b", "c", ...]
+// var allNumbers = [0, 1, 2, 3, ...]
+// var allSpec = ["!", "@", "#", ...]
+
+// Get user input for how long our password is
+// Ex: var passwordLength = prompt("How many character?");
+
+// The password is the correct length
+// if(passwordLength >= 8 ...) {
+  var allChoices = [];
+  // Confirms (yes/no) and save that info
+  var useUpper = confirm("Do you want uppercase?");
+  // ... all the other choices above
+  // What did the user say yes to?
+  // if(useUpper === true) {
+  // allChoices.concat(allUppercase);
+  // }
+
+  // for(var i = 0; i <passwordLength; i++) {
+    // Generating the password using Math.random
+    newPassword += randomChoice;
+  // }
+
+  return newPassword;
+// }
