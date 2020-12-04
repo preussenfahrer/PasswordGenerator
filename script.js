@@ -67,7 +67,7 @@ function generatePassword() {
   for(var i = 1; i >= passwordLength; i++) {
     var randomIndex = allChoices[(Math.floor(Math.random() * allChoices.length))];
 
-    new Password += ""
+    password += ""
   }
 
   newPassword = 
